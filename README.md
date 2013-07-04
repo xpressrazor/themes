@@ -1,6 +1,6 @@
 This is little modification of Faience theme and elementary icons, so that they look good on a dark panel.
 
-I hope you will like it.
+I hope you will like them.
 
 Download
 ========
