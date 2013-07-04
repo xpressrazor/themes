@@ -2,6 +2,11 @@ This is little modification of Faience theme and elementary icons, so that they 
 
 I hope you will like it.
 
+Download
+========
+1. Theme: https://github.com/xpressrazor/themes/blob/master/Faience-mod-dark.tar.gz
+2. Icon: https://github.com/xpressrazor/themes/blob/master/elementary-dark.tar.gz
+
 Source
 ========
 1. Faience : http://tiheum.deviantart.com/art/GTK3-Gnome-Shell-Faience-255097456
