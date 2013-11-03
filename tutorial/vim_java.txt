@@ -1,6 +1,6 @@
 1. Install ctags (sudo pacman -S ctags)
 2. Unzip $JAVA_HOME/src.zip into $JAVA_HOME/src directory
-3. ctags -f ~/.tags/java.tags -R /media/D/Applications/installed_apps/jdk1.7.0/src
+3. ctags -f ~/.tags/java.tags -R $JAVA_HOME/src
 4. ~/.vimrc
 
 "set tags=~/.tags;
