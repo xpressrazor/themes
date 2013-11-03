@@ -1,0 +1,4 @@
+mount -t proc none /media/ArchMountPoint/proc
+mount --rbind /sys /media/ArchMountPoint/sys
+mount --rbind /dev /media/ArchMountPoint/dev
+chroot /media/ArchMountPoint /bin/bash

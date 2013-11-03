@@ -1,0 +1,1 @@
+cpupower frequency-set -f 1200Mhz

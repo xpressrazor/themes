@@ -1,0 +1,8 @@
+xrandr --listproviders
+
+Note ID
+
+# After adding to /etc/xdg/lxsession/LXDE/autostart
+# @xrandr --setprovideroffloadsink 0x53 0x79
+
+DRI_PRIME=1 gamename
