@@ -1,0 +1,3 @@
+UUID=<blkid> /media/Mountdir        ntfs    uid=1000,umask=007,gid=1000 	0       0
+UUID=<blkid> /media/Mountdir      ext4    defaults        0       2
+
