@@ -1,0 +1,127 @@
+# Disable suspend on lid close
+/etc/systemd/logind.conf
+HandleLidSwitch=lock to lock the screen on lid close (but not suspend), or HandleLidSwitch=ignore to not even lock the screen
+
+
+# Wine FPS
+WINEDEBUG=fps wine speed.exe 2>&1 | tee /dev/stderr | grep --line-buffered "^trace:fps:" | osd_cat
+
+
+Arch automount
+comment=systemd.automount
+
+
+sudo gedit /etc/default/apport
+Change last line from "enabled=1" to "enabled=0"
+
+
+dpkg --get-selections | fglrx
+
+
+
+# Mount
+sudo mount -o loop cd1.iso01.iso disk
+
+rm -rf .kde4/share/config/plasma*
+
+Remove online search
+
+sudo nano /etc/network/interfaces
+auto lo
+iface lo inet loopback
+
+
+wget --user-agent="Mozilla/5.0 (Windows NT 6.1; WOW64)"
+
+gpg -c filename # Encrypt
+gpg -d filename # Just see text
+gpg filename # Create file
+
+# Samba
+
+/etc/default/ufw
+IPT_MODULES="..nf_conntrack_netbios_ns"
+
+
+sudo ufw allow proto tcp from 192.168.0.0/24 to any port 22
+sudo ufw allow from 192.168.0.0/24 to any app Samba
+sudo ufw allow from  192.168.0.0/24 to any port 8080
+sudo ufw allow 22
+sudo ufw delete allow 22
+sudo ufw status
+
+
+# view image
+
+feh -g 640x480 -rzsD 10
+
+sudo youtube-dl -U # for youtube-dl update
+avconv -i songfile.format songfile.mp3
+
+rsync -avc yourusername@serverip:/remotedownloaddir/media1/ /home/username/localmedia
+
+-- progress = see progress
+-- n = dry run
+-- delete = delete local
+
+rsync -avc --delete yourusername@serverip:/remotedownloaddir/media1/ /home/username/localmediadir
+
+# add user to a group
+sudo usermod -a -G audio $USER
+
+# Virtualbox guest addition
+sudo apt-get install build-essential linux-headers-`uname -r` dkms
+
+# Find installed packages
+apt-cache policy packagename
+dpkg -l | grep packagename 
+dpkg -s firefox
+aptitude search firefox
+
+# Conky startup
+bash -c "sleep 15 && conky"
+
+# ffmpeg video
+ffmpeg -v verbose -f x11grab -y -r 30 -s 1366x768 -i :0.0  -sameq -f alsa -i default -ar 44100 -acodec libmp3lame -ab 192k -ac 2 /tmp/output.avi
+
+
+# ffmpeg record
+ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.mpg
+
+# ffmepg record with microphone sound
+ffmpeg -f "alsa" -i "pulse" -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.avi
+
+# ffmpeg other
+ffmpeg -f x11grab -s 1366x768 -r 30 -i :0.0 -vcodec libx264 -preset medium -crf 22 -y /tmp/file.mp4
+
+Pulseaudio volume control 
+Recording 
+========
+ALSA plugin-in[ffmpeg]: ALSA Capture from
+
+a. Monitor of Built-in Audio Analog Stereo (for internal audio)
+b. Built-in Audio Analog Stereo (for voice record from microphone)
+
+# My ffmpeg record
+ffmpeg -f alsa -i default -f x11grab -s 1366x768 -r 30 -i :0.0 -sameq out.avi
+
+
+Remove fix shadow ubuntu 13.04
+sudo dpkg-divert --local --rename --divert /usr/share/unity/6/panel-shadow.png_disabled --add /usr/share/unity/6/panel-shadow.png
+
+Download key
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com <KEY>
+
+Shutdown
+sudo shutdown -P 300  # 300 minutes 3.5 hrs
+sudo shutdown -P 16:15  # 4:15 PM
+
+
+Sound menu clementine
+com/canonical/indicator/sound
+
+
+
+Convert video to ogg
+====================
+ffmpeg2theora "${inFile}" --videoquality 6.0 --audioquality 3.0 --output "${outputFile}"

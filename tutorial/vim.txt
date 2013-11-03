@@ -1,0 +1,102 @@
+1. Remove 2 characters from beginning of each line
+:%s/^.\{2}//g
+
+
+2. Copy paste externally
+
+In arch install gvim for +xterm_clipboard feature
+
+"+y: copies the "usual" clipboard buffer (can use ctrl + v, right click and paste)
+"*y: copies to X11 selection (can paste from this buffer using middle click)
+"*p: If you have selected some text in another application, you can paste it into vim using this
+"+p: If you have copied some text (using Ctrl+c) then you can paste it into vim using this
+
+Also copy paste
+"+y and "+gP
+
+3. Ctrl + V block selection (for block edit)
+
+4. Keys
+
+h/j/k/l = left/down/up/right
+w/b   	= beginning of next/previous word
+e 	  	= end of a word
+0/$		= beginning/end of a line
+^		= move to first non-blank char of the line
+_		= same as ^, but can take count to go to next line
+g_		= move to last non-blank char (can take count)
+gg / G	= first/last line
+nG		= move to nth line
+H/M/L	= move to top/middle/bottom of screen
+
+2dd = delete two lines
+z. / zt / zb = put the line at center/top/bottom of screen
+C-D/C-U = Move half page down/up
+C-B/C-F = Move page up/down
+C-o/C-i = Jump to last cursor position (in insert mode C-o lets execute commands)
+n/N		= Next previous search match
+*/#		= Next/previous word under cursor
+g*/g#	= Next/previous matching search pattern under cursor
+%		= Move to matching bracket
+
+:help command  E.g :help g_
+:help backspace
+:help
+:help w
+:help insert-index
+:help user-manual
+
+Use C-w C-w to jump, :q to quit
+
+E.g 
+C-h = backspace
+C-i = tab
+
+
+
+C-o 	= Execute above command in insert mode
+E.g
+C-o + S-i     = Edit at the beginning of current 
+C-o + ^/0     = Edit at beginning
+C-o + F-f     = Place cursor to previous f
+
+S-a			  = Edit at end of current line
+
+F-f			  = Search f
+c-w			  = delete current word and bring to insert mode
+C-w			  = delete previous word without living insert mode
+c-e			  = delete to end of word
+c-$			  = delete line from current position
+
+C-v			  = Block mode
+:20,30s/#/"/g = Replace # in line 20 to 30 with "
+:20,30s/^/"/g = Insert " to beginning of lines 20 to 30
+:s/thee/the   = Change first occurance of thee in current line. Use g for whole line, %s for whole file, gc to prompt
+
+C-g 		  = Shows position in line
+Select some lines and save with :w newfilename
+Use v to delete or manipulate odd text selection
+:r !ls        = Read output of ls command and puts it below the cursor
+:r filename   = Retrive file
+:r $VIMRUNTIME/vimrc_example.vim
+
+
+o/O			  = Open line below/above current
+j$			  = End of next line
+yw			  = Yank one word
+S-r			  = Replace mode until escape is pressed
+
+Type start of the command and press C-D to show a list of commands
+:e (without any blank, if space it shows files)
+
+Press <TAB> and it will complete name of the command
+
+Spell
+:set spell spelllang=en_us  # enable globally
+:setlocal spell spelllang=en_us # locally
+
+z= to suggest words
+:set nospell  # to remove
+;s and [s = remove misspelled word (],[ for movement)
+zg = add a word to the dictionary
+zw = mark a word as incorrect

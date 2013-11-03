@@ -1,0 +1,52 @@
+1. Install ctags (sudo pacman -S ctags)
+2. Unzip $JAVA_HOME/src.zip into $JAVA_HOME/src directory
+3. ctags -f ~/.tags/java.tags -R /media/D/Applications/installed_apps/jdk1.7.0/src
+4. ~/.vimrc
+
+"set tags=~/.tags;
+set tags=~/.tags/java.tags
+
+
+Jump to a tag
+
+In search box to go to String (in java)
+
+:tag String
+Ctrl - ] = Click while Ctrl is selected, press g and click
+stag = to open tag in new window
+Ctrl -W ]  = In new window
+tselect to list all the tag matches e.g :tselect function1 will list all locations where func1 is defined
+:stselect for opening in new window. Ctrl-w g]
+
+Returning after a tag jump
+pop 'expression'
+Ctrl-t
+Ctrl - right click
+g - right mouse button
+
+
+
+# Folding
+zf{motion} or {Visual}zf: Operator to create a fold
+zf'a: fold to a mark
+zF: create a fold for N lines
+zd : Delete one fold at the cursor
+zD: Delete folds recursively at the cursor
+zE: Eliminate all folds in the window
+zo: Open one fold
+z): Open all folds recursively
+zc: Close one fold
+zC: Close all folds recursively
+za: When on a closed fold: open it and viceversa
+sA: When on a close fold: Open it recursively and vice versa
+zR: Open all folds
+zM: Close all folds
+zn: Fold none: reset foldenable. All folds will be open
+zN: Fold normal: set 'foldenable'. All folds will be as they were before
+zi: Invert 'foldenable'
+[z: Move to the start of the current open fold
+]z: Move to the end of the current open fold
+zj: Move downwards to the start of the next fold
+zk: Move upwards to the end of the previous fold
+
+

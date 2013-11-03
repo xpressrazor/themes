@@ -1,0 +1,13 @@
+Alt + Enter	    = Open terminal
+Alt + J/k/l/;       = Focus left/down/up/right
+Alt + e/s/w	    = Default/Stacking/Tabbed
+Alt + f  	    = Full screen
+Alt + d		    = Dmenu
+Alt + shift + q     = Kill
+Alt + 1-9     	    = Switch to another workspace
+Alt + shift + r/e   = Restart/Exit i3
+Alt + Shift + Space = Toogle floating
+Alt + Drag          = Drag floating
+
+
+ncmpcpp with mpd

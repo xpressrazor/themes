@@ -1,0 +1,75 @@
+irssi
+/connect irc.nullirc.net
+/join #test
+/q <nick>      " q = query, <nick> for private chat
+Alt-1  = Switches to your status window (/win #)
+/wc   = Close window (also parting channels)
+/q    = Close window 
+/part = leave
+/set
+/set timestamp
+/set timestamp_format %H:%M:%S (%d.%H%M%S day of month also)
+
+/save
+/help network
+
+Minimal use of /network, /server and /connect might look this
+/network for common network
+/connect <network name> to connect to the netork
+
+/network add -autosendcmd "/^msg bot hi" freenode
+/server add -network freenode irc.freenode.net
+/connect freenode
+
+
+Use /network list and /server list to see all of your configured networks and servers
+
+
+
+wget -P ~/.irssi http://static.quadpoint.org/irssi/fear2.theme
+/set theme fear2
+/save
+
+
+/clear  /c, /cl     clear channel buffer
+/join /j    		join
+/names				List users
+/query		/q		Open a query window with a user
+/window close /wc   Force closure of a window
+/whois	 	 /wi	WHOIS a user. Displays user information
+
+# Fix url
+URxvt*cutchars: `"()'*<>[]{|}
+
+urxvt*perl-lib:         /usr/lib/urxvt/perl/
+urxvt*perl-ext-common:  default,matcher
+urxvt*matcher.button:   1
+urxvt*urlLauncher:      /usr/bin/firefox
+
+
+
+Example
+
+/set nick NICKNAME
+/connect irc.freenode.net
+/j gentoo
+/server add -auto -network Freenode irc.freenode.net 6667
+/network add -nick Gen2ly Freenode
+/channel add -auto #gentoo Freenode
+
+# Setup
+/msg nickserv register <password> <email>  # Registration
+/msg nickserv set hidemail on	          # To keep Nick's email hidden
+/msg nickserv identify <password>         # Login (can be automatic)
+/network add -autosendcmd "/msg nickserv identify <password> ; wait 2000" Freenode
+/help
+
+# Most used commands
+/j, /leave, /msg user, /away, and /quit
+
+The basic key presses are Alt + 1, Alt + 2, Page UP / Page Down
+
+/ignore #channel ALL - PUBLIC -ACTIONS  (ignore join messages), use * for global
+/ignore -time 3600 <nick> Ignore someone for an hour
+
+ 

@@ -1,0 +1,84 @@
+1. File
+
+Ctrl + x, Ctrl + f	Open file
+Ctrl + x, Ctrl + s	Save
+Ctrl + x, Ctrl + w	Save As
+Ctrl + x, s    	 	Save All
+Ctrl + x, k		Close Window/Buffer
+Ctrl + x, Ctrl + c	Quit
+
+
+
+
+2. Edit
+
+C-a C-k C-k C-y C-y	Duplicate line
+Ctrl + _    		Undo
+Ctrl + space		Begin Selection
+Ctrl + g		Cancel Selection
+Ctrl + w		Cut Selection
+Ctrl + k		Cut Line
+Ctrl + y		Paste
+delete			Delete
+Ctrl + d		Forward delete
+Alt + delete		Delete word
+Alt + d			Forward delete word
+Ctrl + k		Delete line
+
+
+3. Cursor Movement
+
+Alt + f / Alt + b	Word forward/backward
+Ctrl + a / Ctrl + e	Line forward / backward
+Alt + { / Alt }	  	Paragraph forward / backward
+Ctrl + v / Alt + v	Page forward / backward
+Alt + < / Alt + >	Document forward / backward
+
+Alt + Ctrl + a /	C Function forward / backward
+Alt + Ctrl + e
+
+4. Search
+
+Ctrl + s		Incremental search
+Ctrl + r		Incremental search reverse
+Alt + Ctrl + s		Regexp incremental search
+Alt + Ctrl + r		Regexp incremental search reverse
+Alt + %	     		Interactive Search and Replace
+Alt + x goto-line	Goto Line Number
+
+Alt + Ctrl + b 		Previous matching bracket
+(or Esc Ctrl + B)	
+
+Alt + Ctrl + f 		Next matching bracket
+(or Esc Ctrl + F)
+
+5. Window
+
+Ctrl + x, k		Close
+Ctrl + x, b		Next window
+Ctrl + x, Ctrl + b	Choose window
+Ctrl + x, 1    	 	Maximize
+Ctrl + x, 2		Split horizonal
+Ctrl + x, 3		Split vertical
+Ctrl + x, o		Switch focus between windows
+Alt + `	  		Activate Menu bar
+
+
+6. Macros
+
+Ctrl + x, (		Start Recording
+Ctrl + x, )		Stop Recording
+Ctrl + x, e		Play Macro
+Alt + #	  		Repeat command # times
+Ctrl + u (#)		Repeat command # times
+
+7. Formatting
+
+Alt + q			Re-flow paragraph
+Alt + Ctrl + \		Indent Selection
+Alt + u/l/c	     	Uppercase/lowercase/captialize Word
+Ctrl + x, Ctrl + u/l	Uppercase/lowercase Selection
+
+
+
+

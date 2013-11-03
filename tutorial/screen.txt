@@ -1,0 +1,65 @@
+screen				= Start a new screen session
+screen -list		= list all running screen windows with IDs (ls)
+screen -rd			= Reattach the session with ID
+man screen
+screen -X -S ID kill = Put proper ID
+
+Ctrl-q/Ctrl-a q     = Deal with flow control (Ctrl-s, Ctrl-a s stops session update)
+screen -S <name>    = Start with a new session name
+screen -r			= Attach a running session
+screen -r <name>
+screen -d <name>	= Detach a running session
+
+From inside session (getting out)
+
+C-a d				= Detach
+C-a D D				= detach and logout (quick edit)
+C-a : quit 			= Exit all of the programs in screen
+C-a C-\				= Force exit screen (not recommended)
+C-a ?				= List keybindings
+
+Window Management
+
+
+
+Create new window						: C-a c
+Change to last-visited active window   	: C-a C-a (common flip-flop)
+Change to window by number				: C-a <number> (0-9)
+Change to window by number or name		: C-a ' <number or title>
+Change to next window in list			: C-a n or C-a <space>
+Change to previous window in list		: C-a p or C-a <backspace>
+See window list							: C-a " (allows selection to change)
+Show window bar							: C-a w	(if you don't have)
+
+Close current window
+
+Kill current window					    : C-a k (not recommended)
+Kill all windows						: C-a \	(not recommended)
+Rename current window 					: C-a A
+
+Split screen
+
+Split display horizontally				: C-a S
+Split display vertically				: C-a | or C-a V (for vanilla)
+Jump to next display region				: C-a tab
+Remove current region					: C-a X
+Remove all regions but the current on	: C-a Q
+
+
+Scripting
+
+Send a command to a named session 		: screen -S <name> -X <command>
+Create a new window and run ping		: screen -S <name> -X screen ping example.com
+
+
+Misc
+
+Redraw window							: C-a C-l
+Entry copy mode							: C-a [ or C-a <esc> (also view scrollback buffer)
+paste									: C-a ]
+monitor window for activity				: C-a M
+monitor window for silence				: C-a _
+enter diagraph (non-ascii)				: C-a C-v
+lock (password protect) display			: C-a x
+enter screen command					: C-a :
+enable logging in the screen session	: C-a H

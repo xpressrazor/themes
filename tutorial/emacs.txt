@@ -1,0 +1,113 @@
+Alt = Meta
+Meta - a = ESC a; 
+C-M-f = ESC C - f
+C-x = For any x, the character Contrl - x
+RET = Return key (C-m actually)
+SPC = Space bar
+ESC = Escape key , C-[
+C-c = Use for commands that are specific to particular modes
+C-h = Use for help commands
+C-x = This prefix is used mostly for commands that manipulate files, buffers and windows
+Tab = Complete key
+
+Alt + Shift + ! = Shell Command
+
+Ctrl + f = Forward char. Move forward
+Ctrl + b = Backward char. Move backward
+Alt  + f = Forward word. Move forward a word
+Alt  + b = Backward word. Move backward a word
+Ctrl + n = Next line. New line
+Ctrl + p = Previous line
+Ctrl + a = Move to beginning of line
+Ctrl + e = Move to end of line
+Alt  + a = Move back to beginning of sentense
+Alt  + e = Move forward to end of sentence
+Alt  + { = Backward paragraph. Move to beginning of current paragraph
+Alt  + } = Forward paragraph. Move to the end of current paragraph
+C-x  + [ = Backward page. Moves to the beginning of current page
+C-x  + ] = Forward page. Moves to end of current page
+Alt  + < = Beginning of buffer. Moves to the beginning of the buffer
+Alt + > = End of buffer. Moves to the end of the buffer.
+C-Alt-k = Kill sexp (S-Expressions, balanced parentheses). Kills after cursor
+C-u -1 C-Alt-k = Kill sexp (before cursor)
+C-u C-k = Kill (C-u 6 C-k)
+C-y = Yank back
+
+Note: Pages are separated by formfeed characters (C-l) in most modes
+
+Copying and Moving Text
+=======================
+C-s = Search forward (Use RET to stop)
+C-r = Search backward
+Alt + % = Query replace (Shift to get %)
+	SPC = Perform this replacement
+	DEL = Don't perform this replacement
+	RET = Terminate query-replace without performing this replacement
+	ESC = Same as RET
+	.  =  Perform this replacement but then terminate the query-replace
+	!  =  Perform this replacement and all the rest in the buffer without query
+
+
+
+
+
+
+File Manipulation
+=================
+C-x C-f = Find File (open file)
+C-x C-s = Save buffer (save file)
+C-x s   = Ask to save some buffers
+C-x C-b = Listbuffers
+C-x b   = Switch buffers
+C-x C-c = Quit Emacs
+C-x 1   = Delete all but one window
+C-x u   = Undo
+C-x k   = Kill buffer. Prompts for a buffer name.
+C-x C-q = vc-toogle-read-only. Make a buffer read only.
+
+
+Manipulate windows
+C-v = Scroll up, scroll forward
+Alt-v = Scroll down, scroll backwards
+C-x o = Other window. Switch to another window.
+C-x 0 = Delete window. Delete current window
+C-x 2 = Spit vertically (Same buffer)
+C-x 3 = Split window horizontally (Same buffer)
+Alt-C-v = Scroll other window.
+
+C-/ = Undo/Redo (C-x u, C-_)
+C-r = Reverse
+
+Alt-z = Minimize Emacs
+C-x + = Increase font
+C-x - = Decrease font
+
+
+Help
+====
+C-h a = Command apropos. Lists commands with keyword
+C-h k = Describe key. Describes command bound to keystroke
+C-h i = Info
+C-h p = Finder by keyword. Keyword browser
+C-h t = Tutorial
+
+Mark
+====
+Alt - @ = Mark word
+C   - @ = Set mark where the point is
+Alt - h = Mark paragraph
+C-Alt-@ = Mark sexp (C-Alt-f would move to)
+C-Alt-h = Mark defun
+C-x C-p = Mark page
+C-x h   = Mark whole buffer
+C-Space = Mark start
+C-w = Kill marked
+
+C-x C-x = Exchange point and mark (Swap). Repeat this to see extent of command
+C-w     = Kill region
+Alt-w   = Kill ring save. (C-w C-y)
+C-x C-i = Indent rigidly (As many character(columns) you provide, default 1 col)
+C-x C-l = Downcase region (Lower case), Disabled by default
+C-x C-u = Upcase region (Upper case), Disabled by default
+Alt-x fill-region = fill-region. Fills, i.e justifies with a ragged right margin
+
