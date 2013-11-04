@@ -15,3 +15,6 @@ export PATH=$PATH:~/bin:$JAVA_HOME/bin
 alias vi=vim
 alias c360="cclive -s medium_mp4_i18_360p"
 alias emacs="emacs -nw"
+
+
+[[ -z /tmp/tmux-1000/default,1584,11 ]] && exec tmux
