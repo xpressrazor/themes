@@ -240,8 +240,7 @@ bindsym XF86AudioStop exec ncmpcpp stop
 bindsym XF86AudioPrev exec ncmpcpp prev
 bindsym XF86AudioNext exec ncmpcpp next
 
-
-
 exec /usr/bin/nm-applet
 exec --no-startup-id artha
-exec --no-startup-id mpd exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id exec mpd
+exec --no-startup-id sh ~/.fehbg
