@@ -1,2 +1,5 @@
 git add -u . # To stage delete
 git rm file.txt # Git delete
+
+git add .
+git push -u origin master
