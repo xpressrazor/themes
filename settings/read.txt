@@ -1,0 +1,1 @@
+This directory goes into ~ directory. Install necessary software (e.g i3, feh, rxvt-unicode / urxvt, twm, necessary themes etc)
