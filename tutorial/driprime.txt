@@ -1,3 +1,7 @@
+# cat /sys/kernel/debug/vgaswitcheoo/switch
+0:IGD:+: Pwr:0000:00:02.0
+1:DIS: : Pwr:0000:01:00.0
+
 xrandr --listproviders
 
 Note ID
@@ -5,4 +9,9 @@ Note ID
 # After adding to /etc/xdg/lxsession/LXDE/autostart
 # @xrandr --setprovideroffloadsink 0x53 0x79
 
+DRI_PRIME=1 glxinfo | grep render
+DRI_PRIME=1 glxgears -info
 DRI_PRIME=1 gamename
+
+radeon.dpm=1 (boot with this kernel parameter)
+grub-mkconfig -o /boot/grub/grub.cfg

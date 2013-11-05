@@ -125,3 +125,8 @@ com/canonical/indicator/sound
 Convert video to ogg
 ====================
 ffmpeg2theora "${inFile}" --videoquality 6.0 --audioquality 3.0 --output "${outputFile}"
+
+
+# Clipboard
+xclip -sel clip < file.txt
+C-v will paste

@@ -1,0 +1,17 @@
+1. You can upload id_rsa.pub file from ~/.ssh
+2. Or generate one
+$ ssh-keygen -t rsa -C "your_email@example.com"
+
+$ ssh-add id_rsa  # I don't remember needing this
+Add passphrase
+
+3. Add ssh to github Accounts Settiings -> SSH Keys -> Add SSH key -> "Paste your key into 'Key' field" -> Add key -> "Confirm by entering GitHub password"
+
+4. Test
+$ ssh -T git@github.com
+
+If Agent admitted failure to sign using the key message comes up, see https://help.github.com/articles/error-agent-admitted-failure-to-sign
+
+
+
+

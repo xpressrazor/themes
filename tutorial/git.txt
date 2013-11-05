@@ -3,3 +3,6 @@ git rm file.txt # Git delete
 
 git add .
 git push -u origin master
+
+git config --global user.name "Your name"
+git config --global user.email "me@here.com"
