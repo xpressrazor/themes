@@ -91,17 +91,27 @@ b. Built-in Audio Analog Stereo (for voice record from microphone)
 
 Also in pavucontrol in Input Devices Microphone (plugged in) is to record from headphone and Internal microphone (unplugged) is to record from laptop without headphone (e.g skype when not using headphone).
 
-Settings of alsamixer (F6) HDA Intel PCH
+Settings of alsamixer (F6) HDA Intel PCH (while headphone)
 
 Master: 100
 Headphone: 100<>100
 Speaker (MM): 0<>0
 PCM: 100<>100
 Mic: 81<>81
-Mic Boost: 20<>20
+Mic Boost: 20<>20 (mute should not also matter)
 Auto-Mute: Enabled
 
-Other muted or 0
+Settings of alsamixer (F6) HDA Intel PCH (no headphone)
+
+Master: 34 
+Headphone (MM): 0<>0
+Speaker : 85<>85
+PCM: 100<>100
+Mic: 81<>81 (mute should not also matter)
+Mic Boost: 0<>0
+Auto-Mute: Enabled
+
+Others muted or 0
 
 
 Remove fix shadow ubuntu 13.04
