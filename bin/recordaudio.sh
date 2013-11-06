@@ -1,5 +1,5 @@
 #!/bin/bash
-# Example recorddesktop.sh output.avi
+# Example recordaudio.sh output.wav
 
 STR="@" | tr -d ' '
 

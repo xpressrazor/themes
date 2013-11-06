@@ -81,19 +81,6 @@ aptitude search firefox
 # Conky startup
 bash -c "sleep 15 && conky"
 
-# ffmpeg video
-ffmpeg -v verbose -f x11grab -y -r 30 -s 1366x768 -i :0.0  -sameq -f alsa -i default -ar 44100 -acodec libmp3lame -ab 192k -ac 2 /tmp/output.avi
-
-
-# ffmpeg record
-ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.mpg
-
-# ffmepg record with microphone sound
-ffmpeg -f "alsa" -i "pulse" -f x11grab -s wxga -r 25 -i :0.0 -sameq /tmp/out.avi
-
-# ffmpeg other
-ffmpeg -f x11grab -s 1366x768 -r 30 -i :0.0 -vcodec libx264 -preset medium -crf 22 -y /tmp/file.mp4
-
 Pulseaudio volume control 
 Recording 
 ========
@@ -102,8 +89,19 @@ ALSA plugin-in[ffmpeg]: ALSA Capture from
 a. Monitor of Built-in Audio Analog Stereo (for internal audio)
 b. Built-in Audio Analog Stereo (for voice record from microphone)
 
-# My ffmpeg record
-ffmpeg -f alsa -i default -f x11grab -s 1366x768 -r 30 -i :0.0 -sameq out.avi
+Also in pavucontrol in Input Devices Microphone (plugged in) is to record from headphone and Internal microphone (unplugged) is to record from laptop without headphone (e.g skype when not using headphone).
+
+Settings of alsamixer (F6) HDA Intel PCH
+
+Master: 100
+Headphone: 100<>100
+Speaker (MM): 0<>0
+PCM: 100<>100
+Mic: 81<>81
+Mic Boost: 20<>20
+Auto-Mute: Enabled
+
+Other muted or 0
 
 
 Remove fix shadow ubuntu 13.04
@@ -130,3 +128,5 @@ ffmpeg2theora "${inFile}" --videoquality 6.0 --audioquality 3.0 --output "${outp
 # Clipboard
 xclip -sel clip < file.txt
 C-v will paste
+
+DISPLAY=:0 firefox &
