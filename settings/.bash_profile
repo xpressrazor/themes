@@ -16,6 +16,7 @@ alias vi=vim
 alias c360="cclive -s medium_mp4_i18_360p"
 alias emacs="emacs -nw"
 alias settings="cd <SETTINGS-DIR>"
+alias today="echo ""; date +\"%Y-%m-%d %A %I:%M %p\"; echo ""; echo ""; cal"
 
 [[ -z "$TMUX" ]] && exec tmux
 
