@@ -1,0 +1,25 @@
+1. Reading words from a text file
+
+a. First way
+
+#!/bin/bash
+while IFS= read -r line
+do
+	wn $line -over
+done 
+
+# All you have to do is redirect file E.g ./thiscript.sh < wordlist.txt 
+# Or you could add < "wordlist.txt" in last line
+
+b. Second way
+
+#!/bin/bash
+for WORD in $(cat /etc/hosts); 
+# for WORD in `cat /etc/hosts`
+do
+    echo "Word: $WORD"
+done
+
+c. Third way (one-liner)
+cat /etc/hosts | xargs -l1 echo "$1"
+cat /etc/hosts | awk '{print $0}'
