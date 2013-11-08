@@ -15,18 +15,14 @@ set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
-"set hlsearch      " highlight search terms
 set incsearch     " show search matches as you type
 
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
-"set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
-
-"set nobackup
-"set noswapfile
+filetype plugin indent on
 
 set pastetoggle=<F2>
 imap <F3> <C-o>:setlocal spell! spelllang=en_us<CR>
@@ -44,23 +40,22 @@ nmap Q gqap
 nnoremap j gj
 nnoremap k gk
 
-"nmap <silent> ,/ :nohlsearch<CR>
-"cmap w!! w !sudo tee % >/dev/null
-
 map <F4> :wa<cr>:make<cr>
 imap xx <Esc>
-"map f :bn<cr>
-"map b :bp<cr>
-
 " repeat previous command
 map <S-k> <Esc>:@:<CR>
-
-" Copy paste
-"nnoremap <C-y> "+y
-"vnoremap <C-y> "+y
-"nnoremap <C-p> "+gP
-"vnoremap <C-p> "+gP
 
 "set tags=~/.tags;
 set tags=~/.tags/java.tags
 set complete=.,w,b,u,t,i
+
+" Mark
+autocmd BufWinLeave * mkview
+autocmd BufWinEnter * silent loadview
+
+
+" Fold
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END

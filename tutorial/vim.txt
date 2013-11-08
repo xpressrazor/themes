@@ -56,7 +56,7 @@ C-i = tab
 
 C-o 	= Execute above command in insert mode
 E.g
-C-o + S-i     = Edit at the beginning of current 
+C-o + S-i     = Edit at the beginning of current line
 C-o + ^/0     = Edit at beginning
 C-o + F-f     = Place cursor to previous f
 
@@ -100,3 +100,20 @@ z= to suggest words
 ;s and [s = remove misspelled word (],[ for movement)
 zg = add a word to the dictionary
 zw = mark a word as incorrect
+
+
+# Mark
+To set a mark type "m" followed by a letter. E.g ma sets mark a. Previous mark will be removed. To jump to a mark use (') or (`) followed by a letter. 
+
+marks list all the current marks
+:marks aB list marks a, B
+]' jump to next line with a lowercase mark
+[' jump to previous line with a lowercase mark (` for mark position)
+:delmarks a delete mark a
+:delmarks a-d  delete a to d
+:delmarks! delete all lowercase marks
+
+
+To autoload mark and folding
+mkview : Save
+loadview : Restore
