@@ -24,6 +24,24 @@ set visualbell           " don't beep
 set noerrorbells         " don't beep
 filetype plugin indent on
 
+" Mark
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+
+" Fold
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
+
+set tags=~/.tags/java.tags
+" set complete=.,w,b,u,t,i
+
+
+" Key Mapping
+" ===========
+"
 set pastetoggle=<F2>
 imap <F3> <C-o>:setlocal spell! spelllang=en_us<CR>
 nmap <F3> :setlocal spell! spelllang=en_us<CR>
@@ -32,30 +50,16 @@ nmap <F3> :setlocal spell! spelllang=en_us<CR>
 set mouse=a
 nnoremap ; :
 
-" format
-vmap Q gq
-nmap Q gqap
-
 " For wrappend lines
 nnoremap j gj
 nnoremap k gk
 
-map <F4> :wa<cr>:make<cr>
-imap xx <Esc>
+" format
+" vmap Q gq
+" nmap Q gqap
+
+" map <F4> :wa<cr>:make<cr>
+" imap xx <Esc>
 " repeat previous command
-map <S-k> <Esc>:@:<CR>
+" map <S-k> <Esc>:@:<CR>
 
-"set tags=~/.tags;
-set tags=~/.tags/java.tags
-set complete=.,w,b,u,t,i
-
-" Mark
-autocmd BufWinLeave * mkview
-autocmd BufWinEnter * silent loadview
-
-
-" Fold
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
