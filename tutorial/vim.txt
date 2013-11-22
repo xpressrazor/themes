@@ -101,6 +101,14 @@ z= to suggest words
 zg = add a word to the dictionary
 zw = mark a word as incorrect
 
+# Comment at beginning
+C-v to select in block mode, S-I # Esc to comment lines
+To comment 4 lines
+
+C-v 3j S-i " ESC
+C-v ap S-i " ESC
+
+For stripped down version :s/^/#
 
 # Mark
 To set a mark type "m" followed by a letter. E.g ma sets mark a. Previous mark will be removed. To jump to a mark use (') or (`) followed by a letter. 

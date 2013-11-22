@@ -1,0 +1,249 @@
+<html>
+<head>
+<title>Emacs Tips</title>
+</head>
+<body>
+<pre>
+C-u 				# Command prefix (E.g. C-u 20 C-f - move 20 char forward)
+C-g				# Cancel
+C-x C-c				# Quit
+C-c u				# Undo C-/ = undo and C-_ = redo
+M-! 				# Command line
+</pre>
+
+<pre>
+# Files
+C-x C-f				# Open ("Find") a file
+C-x C-s				# Save
+C-x s				# Save some or all files to disk
+C-x C-w				# Save as (start editing new file)
+C-x i				# Insert another file into current buffer
+C-x C-v				# Replace this buffer with another file
+</pre>
+
+<h1>Navigation</h1>
+
+<pre>
+# Entity to move over			Backward		Forward
+Character   	 			C-b			C-f
+Word					M-b			M-f
+Line					C-p			C-n
+Sentence				M-a			M-e
+Paragraph				M-{			M-}
+Page					C-x [			C-x ]
+Beginning / End of Line			C-a			C-e
+Beginning / End of Buffer		M-<			M->
+</pre>
+
+<h2>Scroll Direction</h2>
+<pre>
+Previous / Next Screen			M-v			C-v
+Scroll Left / Scroll Right		C-x <			C-x >
+Scroll current line to center		C-u C-l or C-l
+Scroll other window    			M-C-v
+</pre>
+
+<h1>Bookmark</h1>
+
+<pre>
+# Action				Keystroke		List Function
+Set bookmark				C-x r m			(bookmark-set)
+Jump to bookmark			      			(bookmark-jump)
+Delete bookmark							(bookmark-delete)
+</pre>
+
+<h1>Selecting text</h1>
+<pre>
+C-space					# Use movement keys to select. If it does not selected enable M-x transient-mark-mode
+C-w					# Kill
+M-w					# Copy to kill ring (copy)
+C-y					# Paste
+</pre>
+
+<h1>Cutting and Pasting (Killing and Yanking)</h1>
+
+<pre>
+# Entity to Kill      Backward 	   Forward		// Backspace = DEL
+Character   	      DEL	   C-d
+Word		      M-DEL	   M-d
+To the end of line    C-k
+Sentence	      C-x DEL	   M-k
+Entire Line	      M-x kill-entire-line
+</pre>
+
+<h2>Buffer (not used always)</h2>
+<pre>
+# Command     	   Purpose
+append-to-buffer   append the region to particular region
+prepend-to-buffer  add the region to the beginning of a particular bufffer
+copy-to-buffer	   replace specified buffer with contents of regions
+append-to-file	   append region to contents of a specified file
+</pre>
+
+<h1>Searching and Replacing</h2>
+<pre>
+# Command / Function		Keystroke
+Incremental search forward	C-s
+Incremental search backward	C-r
+Query replace	   		M-%
+Word search forward		M-s w
+</pre>
+
+<h2>Formatting Text</h2>
+<pre>
+M-x long-lines-mode		No wordwrap
+C-x f
+</pre>				Word wrap. E.g. C-u 80 C-x f sets width to 80 chars
+
+Note: For hard-rapped lines (e.g in LATEX document), hit C-u 120 C-x f to set the margin, and type M-x auto-fill-mode to toggle auto-fill mode on (see statusbar).
+<pre>
+M-q 		      	        Reformat
+fill-individual paragraphs	Format each paragraph in selected region
+fill-region-as-paragraph	Formats to make single paragraph
+</pre>
+
+<h2>Transponse Letters / Words / Lines</h2>
+<pre>
+C-t	   	     	   Transponse two characters
+M-t		     	   Transponse two words
+C-x C-t		     	   Transponse two lines
+</pre>
+
+<h1>Cleaning up space</h1>
+<pre>
+C-o			   Insert blank line below current
+C-x C-o			   Remove all blank lines above and below but one
+M-\ 			   Concatenate text to left and right of point
+M-space			   	Remove all spaces except one
+M-^			   	Join this line with the previous
+M-backslash		   	Remove all spaces and tabs
+M-space			   	Remove all space but one
+M-x canonically-space-region	Remove extraneous spaces for selected text
+</pre>
+
+<h1>Changing case</h1>
+<pre>
+M-l			  downcase-word
+M-u			  upcase-word
+C-x C-l			  downcase region
+C-x C-u			  upcase region
+M-upcase-initials-region  Upcase first letter of sentense
+</pre>
+
+<h2>End of Line Character</h2>
+Note: To remove, navigate to one of them, select it, copy it using M-w. Then Hit M-% to begin search and replace. When asked what to replace, hit C-y (yank). When asked what to replace the character, just hit return. Emacs will remove all \M characters.
+
+
+<h1>Multiple Windows, Buffers, and Frames</h1>
+<pre>
+# Keystroke 	    Command/Function
+C-x b		    Switch to other buffer
+C-x C-b		    Show the list of active buffers
+C-x 2		    Split the window vertically
+C-x 3		    Split the window horizontally
+C-x k		    Kill buffer (close the file)
+</pre>
+
+<h2>Spell Checking</h2>
+<pre>
+M-$			When on a word
+M-x ispell-buffer	Whole document
+M-x flyspell-mode	Toggle check-as-you-go spell checking from current position
+M-x flyspell-buffer	Toggle spell checking for entire buffer
+M-x ispell-change-dictionary 
+</pre>
+
+Note: If you get tired of the distraction of misspelled words (it's often better to just do all your spell checking at the end of the day instead of as you go, so you don't get distracted) you can toggle flyspell mode back off again with the same command
+
+<h2>Macros</h2>
+<pre>
+C-x (		Begin recording a macro
+C-x )		End recording a macro
+C-x e		Invoke macro, e to repeat
+</pre>
+
+Note: Or select a region and use M-x apply-macro-to-region-lines to edit only a certain portion of your text with the macro (C-x C-k r). If you want to keep the macro available to you, save it and give it a name. Type M-x name-last-kbd-macro or C-x C-k n. You can edit that same macro by typing M-x edit-kbd-macro. A new buffer will open with the commands that make up your macro for editing.
+
+<h1>Keyboard Shortcuts</h1>
+
+Add lines like the following
+<pre>
+(global-set-key [f1] 'goto-line)			# Set M-l to next-line
+(global-set-key [?\M-\l] 'next-line)		
+(global-set-key [?\C-x ?\w] 'beginning-of-buffer)	C-x w to beginning of buffer
+(add-hook 'text-mode-hook 'longlines-mode)
+(global-unset-key (kbd "M-j") )				M-j to join lines
+(global-set-key (kbd "M-j") 'join-line)
+(global-set-key (kbd "M-*") "dookie")
+C-h b							# List of all key bindings
+</pre>
+
+<h1>Fonts and colors</h1>
+<pre>
+M-x set-background-color		Set background color
+M-x set-foreground-color		Set foreground color. Start typing bl for blue and press tab
+M-x set-cursor-color
+M-x set-mouse-color
+</pre>
+
+<h2>To make default add to .emacs</h2>
+<pre>
+(set-foreground-color "white")
+(set-cursor-color "red")
+(set-mouse-color "goldenrod")
+(set-background-color "black")
+</pre>
+
+<h2>To change font</h2>
+<pre>
+M-x set-default-font
+</pre>
+
+<h2>To make it default</h2>
+<pre>
+(set-default-font "-Misc-Fixed-Medium-R-Normal--15-140-75-75-C-90-ISO8859-1")
+</pre>
+
+<h2>Default window parameters (.emacs)</h2>
+<pre>
+(setq default-frame-alist
+  '(
+; frame width and height
+   (width  . 80)
+   (height . 40)
+   )
+)
+</pre>
+
+<h2>Toggle menubar</h2>
+<pre>
+M-x menu-bar-mode
+M-x tool-bar-mode
+</pre>
+
+<h2>To make it default (.emacs)</h2>
+<pre>
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+</pre>
+
+<h2>Other Environment Settings</h2>
+
+<pre>
+Put this in your .emacs		To achieve this effect
+(setq inhibit-startup-message t)	Disables the splash screen
+(global-hl-line-mode 1)	      		Highlights the current line
+(show-paren-mode t)  			Toggles emacs' showing matching parentheses
+(setq transient-mark-mode t)		Highlights the selected region
+</pre>
+
+<h1>Help</h1>
+<pre>
+C-h ?				List all help commands
+C-h t				Read the Emacs manual
+C-h k				Command a particular key sequence is bound to
+C-h b				List all keybindings presently in use
+M-x apropos			Find new commands E.g 
+</pre>
+</body>
+</html>

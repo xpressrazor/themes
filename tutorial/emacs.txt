@@ -1,3 +1,8 @@
+C = Command
+M = Alternate command
+C-x = Command to manipulate files
+C-c = Commands for particular modes
+
 Alt = Meta
 Meta - a = ESC a; 
 C-M-f = ESC C - f
