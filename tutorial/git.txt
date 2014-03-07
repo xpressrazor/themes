@@ -6,3 +6,12 @@ git push -u origin master
 
 git config --global user.name "Your name"
 git config --global user.email "me@here.com"
+
+If you have problem connecting with remote using ssh (say after distro re-install). 
+
+1. Create and add a key using ssh (see ssh tutorial). Next upload the ssh public key to github.
+2. Go to your git project directory and if commit is failing due to ssh change the url as
+
+git remote set-url origin ssh://git@github.com/username/project.git
+
+now you can do the push
