@@ -1,26 +1,26 @@
 Each tmux command is prefixed using the following key combination:
 
-<Ctrl-b> or <C-b> (changed to C-a)
+Change <C-b> to <C-a> (changed to C-a)
 
-<C-b>%							: Split a window vertically 
-<C-b>"							: Split the window horizontally 
-<C-b>[Up, Down, Right, Left] 	: Move between active panes
-<C-b>;							: Go to previous
-<C-b><C-o>						: Rotate windows
-<C-b><C-Up[Down][Left][Right]>  : Change pane sizes
-<C-b><Meta-Up[Down][Left][Right]>
-<C-b>x							: Closing a pane
-<C-b>c							: Create new window
-<C-b>n/p						: Switch to next window
-<C-b>w							: Select window interactively
-<C-b>&							: Close a window
-<C-b>z							: Toggle zoom
+<C-a>%							: Split a window vertically 
+<C-a>"							: Split the window horizontally 
+<C-a>[Up, Down, Right, Left] 	: Move between active panes
+<C-a>;							: Go to previous
+<C-a><C-o>						: Rotate windows
+<C-a><C-Up[Down][Left][Right]>  : Change pane sizes
+<C-a><Meta-Up[Down][Left][Right]>
+<C-a>x							: Closing a pane
+<C-a>c							: Create new window
+<C-a>n/p						: Switch to next window
+<C-a>w							: Select window interactively
+<C-a>&							: Close a window
+<C-a>z							: Toggle zoom
 
 Copy Mode
 
-<C-b>[							: Scroll up the screen (use one of Up, Down, PgUp or PgDn to scroll up or down)
-<C-b>]							: In scroll mode you can copy text from history and then paste it this key. To exit insert mode press ESC
-<C-b>?							: Key bindings
+<C-a>[							: Scroll up the screen (use one of Up, Down, PgUp or PgDn to scroll up or down)
+<C-a>]							: In scroll mode you can copy text from history and then paste it this key. To exit insert mode press ESC
+<C-a>?							: Key bindings
 
 
 Configuring Tmux (/etc/tmux.conf or ~/.tmux.conf)
@@ -30,16 +30,16 @@ set -g prefix C-a	# g = global option
 unbind C-b
 bind C-a send-prefix
 
-<C-b>:							: Send commands
+<C-a>:							: Send commands
 
 
 tmux new -s session_name		: Create a new tmux named session_name
 tmux attach -t session_name		: Attaches to an existing tmux session
 tmux switch -t session_name		: Switches to an existing session
 tmux list-sessions				: tmux ls
-<C-b>d							: detach window
-<C-b> 0-9						: Switch to tmux window
-<C-b> ,							: Rename window
+<C-a>d							: detach window
+<C-a> 0-9						: Switch to tmux window
+<C-a> ,							: Rename window
 
 
 tmux list-keys					: lists out every bound keys

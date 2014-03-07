@@ -53,6 +53,13 @@ C-h = backspace
 C-i = tab
 
 
+Tags
+
+" Use "ctags -R ~/src/dir" to create tags file
+" Put this in .vimrc
+set tags=./tags,tags,../tags,../../tags;$HOME
+
+
 
 C-o 	= Execute above command in insert mode
 E.g
@@ -100,6 +107,9 @@ z= to suggest words
 ;s and [s = remove misspelled word (],[ for movement)
 zg = add a word to the dictionary
 zw = mark a word as incorrect
+
+" Fold
+" v(visual) zf = create fold, za = open, zc = close, zd = delete fold
 
 # Comment at beginning
 C-v to select in block mode, S-I # Esc to comment lines

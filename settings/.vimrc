@@ -1,9 +1,6 @@
 set nocompatible
 set hidden
 syntax on          " syntax highlighing
-
-
-"set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
 set backspace=indent,eol,start " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
@@ -17,6 +14,11 @@ set smartcase     " ignore case if search pattern is all lowercase, case-sensiti
 set smarttab      " insert tabs on the start of a line according to shiftwidth, not tabstop
 set incsearch     " show search matches as you type
 
+set guifont=Inconsolata\ Medium\ 15 
+" set guioptions-=m	"menubar
+set guioptions-=T	" toolbar
+set guioptions-=r	" right scrollbar
+
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -28,16 +30,16 @@ filetype plugin indent on
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
-
 " Fold
+" v(visual) zf = create fold, za = open, zc = close, zd = delete fold
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
-set tags=~/.tags/java.tags
-" set complete=.,w,b,u,t,i
-
+" Use "ctags -R ~/src/dir" to create tags file
+" set tags=./tags,tags,~/.tags/tags,../tags,../../tags;$HOME
+set tags=./tags,~/.tags/tags,../tags,../../tags
 
 " Key Mapping
 " ===========
@@ -54,12 +56,10 @@ nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 
-" format
-" vmap Q gq
-" nmap Q gqap
+" set path=$PWD/**
 
-" map <F4> :wa<cr>:make<cr>
-" imap xx <Esc>
-" repeat previous command
-" map <S-k> <Esc>:@:<CR>
+" Compiler
+" set makeprg=gcc\ -o\ %<\ %
 
+" CDC = Change to Directory of Current file
+command CDC cd %:p:h

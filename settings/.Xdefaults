@@ -5,8 +5,11 @@ urxvt*perl-lib:        /usr/lib/urxvt/perl/
 urxvt*perl-ext-common: default,matcher,searchable-scrollback
 ! urxvt*font:            xft:DejaVu Sans Mono:pixelsize=10
 ! urxvt*boldFont:        xft:DejaVu Sans Mono:pixelsize=10
-urxvt*font:            xft:Ubuntu Mono:pixelsize=16,style=regular
-urxvt*boldFont:        xft:Ubuntu Mono:pixelsize=16,style=bold
+!urxvt*font:            xft:Ubuntu Mono:pixelsize=16,style=regular
+!urxvt*boldFont:        xft:Ubuntu Mono:pixelsize=16,style=bold
+urxvt*font:            xft:Consolas:pixelsize=16,style=regular
+urxvt*boldFont:        xft:Consolas:pixelsize=16,style=bold
+
 urxvt.scrollBar:       false
 urxvt.saveLines:       65535
 urxvt.secondaryScroll: true
@@ -15,62 +18,89 @@ urxvt.visualBell:      false
 urxvt*geometry:        95x25
 urxvt*cutchars:        `"()'*<>[]{|}
 urxvt*matcher.button:  1
-#urxvt*depth:           24
-#urxvt*shading:         20
-#urxvt*transparent:     true
-#urxvt*tintColor:	   white
 urxvt.cursorColor:     #dcdcdc
-urxvt.cursorBlink:     true
+urxvt.cursorBlink:     false
  
 ! Reset
 *foreground:     #d0d0d0
 *background:     #030303
 *highlightColor: #870000
-#urxvt*background: rgba:0000/0000/0000/cccc 
+
+!*foreground: #000000
+!background: #ffffff
+
 
 URxvt.transparent: true
-URxvt.tintColor: white
-URxvt.shading	: 20
+URxvt.shading: 5
  
 ! Black + DarkGrey
-*color0:  #000000
-*color8:  #454545
+!*color0:  #000000
+!*color8:  #454545
  
 ! DarkRed + Red
-*color1:  #870000
-*color9:  #de0000
+!*color1:  #870000
+!*color9:  #de0000
  
 ! DarkGreen + Green
-*color2:  #91ab3a
-*color10: #9ab53d
+!*color2:  #1C4400
+!*color10: #006F0E
  
 ! DarkYellow + Yellow
-*color3:  #969696
-*color11: #e5e5e5
+!*color3:  #949A21
+!*color11: #ABB130
  
 ! DarkBlue + Blue
-*color4:  #656565
-*color12: #656565
+!*color4:  #141224
+!*color12: #130F34
  
 ! DarkMangenta + Mangenta
-*color5:  #707070
-*color13: #747474
+!*color5:  #761B48
+!*color13: #7E2F7E
  
 !DarkCyan + Cyan
-*color6:  #a9a9a9
-*color14: #c4c4c4
+!*color6:  #00121F
+!*color14: #06253B
  
 ! LightGrey + White
-*color7:  #d0d0d0
-*color15: #dedede
+!*color7:  #d0d0d0
+!*color15: #dedede
+
+
+! My
+
+!urxvt*foreground: white
+!urxvt*background: black
+
+! black, red, green, yellow, blue, magenta (5), cyan, white, bright black, bright red ...
+*color0:  #2E3436  
+*color1:  #a40000
+*color2:  #4E9A06
+*color3:  #C4A000
+*color4:  #3465A4
+*color5:  #75507B
+*color6:  #ce5c00
+*color7:  #babdb9
+*color8:  #555753
+*color9:  #EF2929
+*color10: #8AE234
+*color11: #FCE94F
+*color12: #729FCF
+*color13: #AD7FA8
+*color14: #fcaf3e
+*color15: #EEEEEC
  
-#xrenoise.use_xcursors:     1
-#xrenoise.display:          :0
-#xrenoise.display_resource: 0x00,0x09,0x32,0x4C,0x2F,0xED,0xB4,0x57
-#xrenoise.executable_path:  /usr/bin/renoise
+! xrenoise.use_xcursors:     1
+! xrenoise.display:          :0
+! xrenoise.display_resource: 0x00,0x09,0x32,0x4C,0x2F,0xED,0xB4,0x57
+! xrenoise.executable_path:  /usr/bin/renoise
 
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste 
+URxvt.perl-ext-common: default,clipboard,font-size
 URxvt.iso14755: False 
-URxvt.perl-ext-common: default,clipboard
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste 
 
-#URxvt.transparent: true
+URxvt.font-size.step: 4
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+
