@@ -59,7 +59,13 @@ nnoremap k gk
 " set path=$PWD/**
 
 " Compiler
-" set makeprg=gcc\ -o\ %<\ %
+au FileType c set makeprg=gcc\ -o\ %<\ %
+au FileType cpp set makeprg=g++\ -o\ %<\ %
 
 " CDC = Change to Directory of Current file
 command CDC cd %:p:h
+
+" Compile and run
+
+" imap <C-x> :!gcc % -o %< && ./%< <CR>
+nmap <C-x> :make && clear && ./%< <CR>
