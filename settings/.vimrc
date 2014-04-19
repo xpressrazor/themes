@@ -47,6 +47,7 @@ set tags=./tags,~/.tags/tags,../tags,../../tags
 set pastetoggle=<F2>
 imap <F3> <C-o>:setlocal spell! spelllang=en_us<CR>
 nmap <F3> :setlocal spell! spelllang=en_us<CR>
+map <F4> :NERDTreeToggle<CR>
 
 " mouse
 set mouse=a
@@ -56,16 +57,37 @@ nnoremap ; :
 nnoremap j gj
 nnoremap k gk
 
+" Templates
+" autocmd BufNewFile  *.c	0r ~/.vim/template/skeleton.c
+" autocmd BufNewFile  *.cpp	0r ~/.vim/template/skeleton.cpp
+" autocmd BufNewFile  *.h	0r ~/.vim/template/skeleton.h
+" autocmd BufNewFile  *.java	0r ~./vim/template/skeleton.java
+
+
 " set path=$PWD/**
 
 " Compiler
-au FileType c set makeprg=gcc\ -o\ %<\ %
-au FileType cpp set makeprg=g++\ -o\ %<\ %
-
+set makeprg=[[\ -f\ Makefile\ ]]\ &&\ make\ \\\|\\\|\ gcc\ %\ -o\ %<
 " CDC = Change to Directory of Current file
-command CDC cd %:p:h
+" command CDC cd %:p:h
+command MAIN r ~/.vim/template/skeleton.c
+
+
+set autochdir
+nnoremap gb :buffers<CR>:
 
 " Compile and run
 
-" imap <C-x> :!gcc % -o %< && ./%< <CR>
-nmap <C-x> :make && clear && ./%< <CR>
+nmap <C-c> :!gcc % -o /tmp/%< && clear && /tmp/%< <CR>
+inoremap <C-d> <ESC>O
+imap <C-Space> <ESC>
+imap <C-k> <ESC>:bn<CR>
+imap <C-l> <ESC>:bp<CR>
+nmap <C-k> :bn<CR>
+nmap <C-l> :bp<CR>
+imap jj <ESC>
+
+
+au FileType c,cpp setlocal comments-=:// comments+=f://
+
+" au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
