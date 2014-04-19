@@ -1,0 +1,26 @@
+# Install
+sudo docker pull ubuntu:12.04
+sudo docker pull tutum/ubuntu-saucy
+sudo docker pull busybox
+sudo docker pull base/arch
+
+
+# Run (In not install it will pull first)
+sudo docker run busybox /bin/echo hello world
+sudo docker run ubuntu /bin/echo hello world
+sudo docker run busybox /bin/sh -c "while true; do echo hello world; sleep 1; done"
+docker run -i -t ubuntu /bin/bash
+docker run -i -t tutum/ubuntu-saucy /bin/bash
+
+# Process
+sudo docker ps -a
+
+# Images
+sudo docker images
+
+# Remove
+sudo docker rmi 6170bb7b0ad1
+
+
+
+docker run -i -t tutum/ubuntu-saucy /bin/bash
