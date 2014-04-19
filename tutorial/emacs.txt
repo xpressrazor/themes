@@ -116,3 +116,51 @@ C-x C-l = Downcase region (Lower case), Disabled by default
 C-x C-u = Upcase region (Upper case), Disabled by default
 Alt-x fill-region = fill-region. Fills, i.e justifies with a ragged right margin
 
+Compile
+=======
+Alt + x compile = Compile with proper command
+Alt + Shift + 1 ./<file-name> = Run
+C-Alt-q		= In block { press this key to indent
+
+Man page
+Alt + x man
+
+
+# Fe commands
+Alt + x compile
+Alt + x man
+Alt + Shift + 1 ./<file-name>
+Ctrl + Alt + q = Indent block
+C-w = Kill region
+Alt-w = Kill ring save. (C-w C-y)
+C-Space = Mark start
+C-h p = Find by keyword
+C-x +/- = Zoom
+C-v / A-v = Scropp up/down
+C-/ = Undo/Redo (C-x u, C-_)
+C-r = Reverse
+C-x o = Other window. Switch to another window.
+C-x 0 = Delete window. Delete current window
+C-x 2 = Spit vertically (Same buffer)
+C-x 3 = Split window horizontally (Same buffer)
+Alt-C-v = Scroll other window.
+C-x b   = Switch buffers
+C-x 1   = Delete all but one window
+C-x u   = Undo
+C-x k   = Kill buffer. Prompts for a buffer name.
+C-s = Search forward (Use RET to stop)
+C-r = Search backward
+Alt + % = Query replace (Shift to get %)
+	SPC = Perform this replacement
+Alt  + { = Backward paragraph. Move to beginning of current paragraph
+Alt  + } = Forward paragraph. Move to the end of current paragraph
+C-x  + [ = Backward page. Moves to the beginning of current page
+C-x  + ] = Forward page. Moves to end of current page
+Alt  + < = Beginning of buffer. Moves to the beginning of the buffer
+Alt + > = End of buffer. Moves to the end of the buffer.
+C-Alt-k = Kill sexp (S-Expressions, balanced parentheses). Kills after cursor
+C-u -1 C-Alt-k = Kill sexp (before cursor)
+C-u C-k = Kill (C-u 6 C-k)
+C-y = Yank back
+
+

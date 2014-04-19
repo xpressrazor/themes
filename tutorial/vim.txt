@@ -135,3 +135,5 @@ marks list all the current marks
 To autoload mark and folding
 mkview : Save
 loadview : Restore
+
+To view man page: Shift + k
