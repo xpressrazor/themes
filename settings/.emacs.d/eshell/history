@@ -1,0 +1,35 @@
+ls
+ls
+pwd
+ls
+ls
+cd
+ls
+cd .emacs.d/
+ls
+cd eshell
+ls
+cd ..
+ls
+cd elpa/
+ls
+ls
+cd ~/Music
+ls
+cd Anime/
+ls
+vi ~/bin/playsongs.sh
+chmod +x ~/bin/playsongs.sh
+ls
+~/bin/playsongs.sh *.*
+vi ~/bin/playsongs.sh
+~/bin/playsongs.sh *.*
+playsongs.sh *.*
+~/bin/playsongs.sh *.*
+~/bin/playsongs.sh *.*
+cd
+cd ~/.emacs.d/
+ls
+cd elpa/
+ls
+rm -rf mpv-20150218.118/
