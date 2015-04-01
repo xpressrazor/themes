@@ -33,3 +33,34 @@ ls
 cd elpa/
 ls
 rm -rf mpv-20150218.118/
+ls
+cd
+ls
+cd Music/
+ls
+cd int/
+ls
+cd japanese/
+ls
+mpv 2NE1\ -\ Go\ Away\ \(japan\ version\)-FxQfrbcNUuQ.mp3 
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd Videos/
+ls
+mpv Resham_Filili_Lyrical_Song_Resham_Filili_hd720.mp4 
+mpv Resham_Filili_Lyrical_Song_Resham_Filili_hd720.mp4 
+cd
+ls
+ls
+cd
+ls
+cd myapp
+ls
+ls
+ls
+rails server

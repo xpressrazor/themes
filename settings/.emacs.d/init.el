@@ -6,6 +6,7 @@
 ;; Load path
 (add-to-list 'load-path "~/.emacs.d/elpa")
 (add-to-list 'load-path "~/.emacs.d/lisp")
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 
 ;; Recent files
 (require 'recentf)
@@ -50,6 +51,7 @@
 
 
 ;; git
+(require 'git)
 (setq git-state-modeline-decoration 'git-state-decoration-large-dot)
 (global-set-key (kbd "C-x M-g") 'git-status)
 
@@ -58,6 +60,7 @@
 (tool-bar-mode -1)
 (setq inhibit-splash-screen t)
 (switch-to-buffer "**")
+(show-paren-mode 1)
 
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
@@ -201,3 +204,70 @@
 
 ;; turn on automatic bracket insertion by pairs. New in emacs 24
 (electric-pair-mode 1)
+
+;; Haskell
+(add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+(add-hook 'haskell-mode-hook 'inf-haskell-mode)
+
+
+
+;; Bind l to help-go-back in help-mode
+ (add-hook 'help-mode-hook
+    (lambda () (define-key help-mode-map "l" 'help-go-back)))
+
+
+;; Color-theme-select
+(package-initialize)
+(require 'color-theme)
+(setq color-theme-is-global t)
+(color-theme-initialize)
+;(color-theme-classic)
+
+;; Display time
+(setq display-time-day-and-date t
+      display-time-24hr-format t)
+  (display-time)
+
+
+;; Scroll zoom
+(global-set-key [C-mouse-4] 'text-scale-increase)
+(global-set-key [C-mouse-5] 'text-scale-decrease)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#181512" "#8c644c" "#c4be90" "#fafac0" "#646a6d" "#6d6871" "#3b484a" "#bea492"])
+ '(ansi-term-color-vector
+   [unspecified "#181512" "#8c644c" "#c4be90" "#fafac0" "#646a6d" "#6d6871" "#646a6d" "#bea492"])
+ '(custom-safe-themes
+   (quote
+    ("bb6b64bfb2f63efed8dea1ca03691c07c851a8be6f21675fe4909289d68975d9" "27eb4bbd908683d344af2a0b90d71698938ab9af1656b1aed87e68258ef8c980" "dc758223066a28f3c6ef6c42c9136bf4c913ec6d3b710794252dc072a3b92b14" "987b709680284a5858d5fe7e4e428463a20dfabe0a6f2a6146b3b8c7c529f08b" "1177fe4645eb8db34ee151ce45518e47cc4595c3e72c55dc07df03ab353ad132" "0b2e94037dbb1ff45cc3cd89a07901eeed93849524b574fa8daa79901b2bfdcf" "c0dd134ecd6ede6508c30f7d4ac92334229531df62284fc6572f65b4d0cde43f" "f2f2941e226bc578fa82b8badbb6ff252eef6b50b6f8f6263f8102cf5e029db8" "e3a3b7d7fe89b5d57d40bc825ca2324875a6f37bd63da66f2a6fc68cc8b2ee95" "7bf64a1839bf4dbc61395bd034c21204f652185d17084761a648251041b70233" "f641bdb1b534a06baa5e05ffdb5039fb265fde2764fbfd9a90b0d23b75f3936b" default)))
+ '(fringe-mode 6 nil (fringe))
+ '(linum-format " %7d ")
+ '(main-line-color1 "#191919")
+ '(main-line-color2 "#111111")
+ '(powerline-color1 "#191919")
+ '(powerline-color2 "#111111"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+					;(load-theme 'blackboard t)
+(load-theme 'github t)
+					;(load-theme 'tommyh t)
+;(load-theme 'ritchie t)
+					;(load-theme 'color-them-mac-classic t)
+;(load-file "~/.emacs.d/themes/color-theme-mac-classic.el")
+					;(color-theme-mac-classic)
+					;(load-theme 'radiance t)
+;(load-theme 'tron t)
+					;(load-theme 'deep-thought t)
+					;(load-theme 'assemblage t)
+					;(load-theme 'professional t)
+;(load-theme 'erosiond t)
+
