@@ -229,6 +229,15 @@
   (display-time)
 
 
+;; Toggle - Maximized
+(run-with-idle-timer 0.1 nil 'toggle-max-frame)
+(global-set-key [f12] 'toggle-max-frame)
+
+;; Reload ~/.emacs.d/init.el
+(defun reload-init() (interactive) (load-file "~/.emacs.d/init.el"))
+(global-set-key [f5] 'reload-init)
+
+ 
 ;; Scroll zoom
 (global-set-key [C-mouse-4] 'text-scale-increase)
 (global-set-key [C-mouse-5] 'text-scale-decrease)
