@@ -64,3 +64,53 @@ ls
 ls
 ls
 rails server
+ls
+pwd
+cd bin/
+ls
+ls
+mpv 2NE1\ -\ Go\ Away\ \(japan\ version\)-FxQfrbcNUuQ.mp3 
+ls
+ls
+ls
+cd
+ls
+cd .emacs.d/
+ls
+mkdir desktop-save
+ls
+cd ..
+ls
+cd ..
+ls
+cd ..
+ls
+cd archive/
+ls
+cd ..
+rmdir archive/
+ls
+git status
+git add .
+git commit -m "One to many created for events controller"
+git push origin master
+git status
+clear
+ls
+ls
+cd
+ls
+cd bin/
+ls
+./startmongodb.sh 
+cd
+cd myapp/
+rails server
+ls
+ls
+cd
+cd
+cd myapp/
+ls
+rails server
+mongo
